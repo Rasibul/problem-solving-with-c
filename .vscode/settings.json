@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.dbclient-js": "javascript",
+        ".env*": "dotenv",
+        "stdio.h": "c"
+    }
+}
