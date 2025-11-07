@@ -1,27 +1,28 @@
 #include <stdio.h>
-#include <string.h>
 
 
-int is_palindrome(char str[]) {
-    int len = strlen(str);
-    for (int i = 0; i < len / 2; i++) {
-        if (str[i] != str[len - i - 1]) {
-            return 0; 
-        }
+void odd_even() {
+    int N;
+    scanf("%d", &N);
+
+    int A[N];
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &A[i]);
     }
-    return 1; 
+
+    int even_count = 0, odd_count = 0;
+
+    for (int i = 0; i < N; i++) {
+        if (A[i] % 2 == 0)
+            even_count++;
+        else
+            odd_count++;
+    }
+
+    printf("%d %d\n", even_count, odd_count);
 }
 
 int main() {
-    char S[1001]; 
-    scanf("%s", S);
-
-    int result = is_palindrome(S);
-
-    if (result == 1)
-        printf("Palindrome\n");
-    else
-        printf("Not Palindrome\n");
-
+    odd_even();
     return 0;
 }
