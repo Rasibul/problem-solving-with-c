@@ -1,34 +1,23 @@
-#include <stdio.h>
+#include<bits/stdc++.h>
+using namespace std;
 
-int cmpfunc(const void *a, const void *b) {
-    return (*(int*)a - *(int*)b);
-}
 
-int main() {
-    int T;
-    scanf("%d", &T);
+class Student{
+    public:
+    int name;
+    int roll;
+    int marks;
+};
 
-    while(T--) {
-        int N;
-        scanf("%d", &N);
-
-        int A[N], B[N], C[N];
-
-        for(int i = 0; i < N; i++) {
-            scanf("%d", &A[i]);
-            B[i] = A[i]; 
-        }
-
-        qsort(B, N, sizeof(int), cmpfunc); 
-        for(int i = 0; i < N; i++) {
-            C[i] = abs(A[i] - B[i]); 
-        }
-
-        for(int i = 0; i < N; i++) {
-            printf("%d ", C[i]);
-        }
-        printf("\n");
+int main(){
+    int n;
+    cin >> n;
+    Student arr[n];
+    for(int i=0;i<n;i++){
+        cin >> arr[i].name >> arr[i].roll >> arr[i].marks;
     }
-
+    for(int i=0;i<n;i++){
+        cout << arr[i].name << " " << arr[i].roll << " " << arr[i].marks << endl;
+    }
     return 0;
 }
